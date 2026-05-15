@@ -61,12 +61,12 @@ def is_power_of_two(N):
 # Section 2 — Frequency / Wavenumber Grid Helpers (used by Tasks 5–7)
 # ─────────────────────────────────────────────────────────────────────────────
 
-def _frequency_indices(N):
+def frequency_indices(N):
     """DFT bin indices: [0, 1, …, N/2-1, -N/2, …, -1] for even N."""
     return np.concatenate([np.arange(0, N // 2), np.arange(-N // 2, 0)])
 
 
-def _make_wavenumber_grid(N, L=10.0):
+def make_wavenumber_grid(N, L=10.0):
     """Return KX, KY grids in rad/unit-length for an L-by-L domain."""
     k = 2 * np.pi * _frequency_indices(N) / L
     return np.meshgrid(k, k)
