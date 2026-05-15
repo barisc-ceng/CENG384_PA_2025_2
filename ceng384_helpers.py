@@ -320,15 +320,15 @@ def visualize_task4(my_fft2, my_ifft2):
     plt.show()
 
 
-def animate_task5(Z, moving_surface, L=10.0):
+def animate_task5(moving_surface, N=64, L=10.0, seed=42):
     """
     Task 5.3 — Animate a drifting ocean surface.
-    Call as:  animate_task5(Z, moving_surface)
+    Call as:  animate_task5(moving_surface)
     """
     from matplotlib.animation import FuncAnimation
     from IPython.display import HTML
 
-    N = Z.shape[0]
+    Z = make_ocean_surface(N=N, L=L, seed=seed)
     x = np.linspace(0, L, N, endpoint=False)
     y = np.linspace(0, L, N, endpoint=False)
     X_grid, Y_grid = np.meshgrid(x, y)
