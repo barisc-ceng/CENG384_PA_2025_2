@@ -68,7 +68,7 @@ def frequency_indices(N):
 
 def make_wavenumber_grid(N, L=10.0):
     """Return KX, KY grids in rad/unit-length for an L-by-L domain."""
-    k = 2 * np.pi * _frequency_indices(N) / L
+    k = 2 * np.pi * frequency_indices(N) / L
     return np.meshgrid(k, k)
 
 
